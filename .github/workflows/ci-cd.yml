@@ -22,7 +22,7 @@ jobs:
             - name: Установка Node.js
               uses: actions/setup-node@v3
               with:
-                  node-version: '22' # или ваша актуальная версия
+                  node-version: '22'
 
             - name: Установка зависимостей
               run: yarn install
@@ -30,21 +30,21 @@ jobs:
             - name: Запуск сборки
               run: yarn build
 
-        deploy:
-            runs-on: ubuntu-latest
-            needs: build-and-test
-            if: github.ref == 'refs/heads/main'
-            steps:
-                - name: Checkout кода
-                  uses: actions/checkout@v3
+    deploy:
+        runs-on: ubuntu-latest
+        needs: build-and-test
+        if: github.ref == 'refs/heads/main'
+        steps:
+            - name: Checkout кода
+              uses: actions/checkout@v3
 
-                - name: Установка Node.js
-                  uses: actions/setup-node@v3
-                  with:
-                      node-version: '22'
+            - name: Установка Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '22'
 
-                - name: Установка зависимостей
-                  run: yarn install
+            - name: Установка зависимостей
+              run: yarn install
 
-                - name: Сборка приложения
-                  run: yarn build
+            - name: Сборка приложения
+              run: yarn build
