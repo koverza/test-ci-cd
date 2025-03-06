@@ -1,3 +1,4 @@
 .env
 help.txt
 snippets.txt
+node_modules/
