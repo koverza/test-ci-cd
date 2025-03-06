@@ -1,0 +1,5 @@
+// GRID - minmax(150px - min, 1fr - max), fit-content(150px - max), repeat(3 - how columns, 1fr)
+
+// все тексты в фигме и win + w/v
+
+// data-da=".content__column-garden,992,2"

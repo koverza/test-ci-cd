@@ -1,0 +1,46 @@
+.animation-item {
+  transform: translate(0, 120%);
+  opacity: 0;
+  transition: all 1.2s ease 0s;
+}
+
+.animation-item.active {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.animation-show {
+  transform: translate(0px, 120%);
+  opacity: 0;
+  transition: all 0.8s ease 0s;
+}
+
+.animation-show.active,
+.active .animation-show {
+  opacity: 1;
+  transform: translate(0px, 0px);
+}
+
+.list__item li {
+  transform: translate(-120%, 0px);
+}
+
+.list__item {
+  &.active {
+    li {
+      @for $var from 1 to 3 {
+        $delay: $var * 0.2;
+        
+        &:nth-child(#{$var}) {
+          @if $var == 1 {
+            transition: transform 0.8s ease 0s;
+          } @else {
+            transition: transform 0.8s ease #{$delay}s;
+          }
+        }
+      }
+    }
+  }
+}
+
+// animation-item-noHide

@@ -1,0 +1,581 @@
+{
+	"section": {
+		"scope": "html",
+		"prefix": "ss",
+		"body": [
+			"<section class=\"name$1\">",
+			"    <div class=\"container\">",
+			"        <div class=\"name$1__inner\">",
+			"            $2",
+			"        </div>",
+			"    </div>",
+			"</section>"
+		],
+	},
+	"burger": {
+		"scope": "html",
+		"prefix": "burger",
+		"body": [
+			"<div class=\"burger-wrapper\">",
+			"      <div class=\"burger\">",
+			"        <div class=\"burger__line\"></div>",
+			"        <div class=\"burger__line\"></div>",
+			"        <div class=\"burger__line\"></div>",
+			"      </div>",
+			"</div>",
+		],
+	},
+	"chart": {
+		"scope": "html",
+		"prefix": "chart",
+		"body": [
+			"<canvas id=\"myChart\"></canvas>",
+		],
+	},
+	"musk": {
+		"scope": "html",
+		"prefix": "musk",
+		"body": [
+			"<input type=\"tel\" id=\"myInput\" placeholder=\"+38 (0__) \">",
+		],
+	},
+	"checkbox": {
+		"scope": "html",
+		"prefix": "checkbox",
+		"body": [
+			"<div class=\"checkbox\">",
+			"    <input class=\"checkbox__input\" type=\"checkbox\" id=\"checkbox1\" />",
+			"    <label class=\"checkbox__label\" for=\"checkbox1\">Checkbox 1</label>",
+			"</div>",
+		],
+	},
+	"radio": {
+		"scope": "html",
+		"prefix": "radio",
+		"body": [
+			"<div class=\"radio\">",
+			"    <input class=\"radio__input\" type=\"radio\" id=\"radio1\" />",
+			"    <label class=\"radio__label\" for=\"radio1\">Radio 1</label>",
+			"</div>",
+		],
+	},
+	"dark": {
+		"scope": "html",
+		"prefix": "dark",
+		"body": [
+			"<div class=\"themeToggle\">",
+			"    <input type=\"checkbox\" class=\"themeToggle__input\" id=\"themeToggle__input\">",
+			"    <label for=\"themeToggle__input\" class=\"themeToggle__label\"></label>",
+			"</div>",
+		],
+	},
+	"calendar": {
+		"scope": "html",
+		"prefix": "calendar",
+		"body": [
+			"<input type=\"text\" class=\"input\">",
+		],
+	},
+	"drag": {
+		"scope": "html",
+		"prefix": "drag",
+		"body": [
+			"<div class=\"zone1\"></div>",
+			"<div class=\"zone2\">",
+			"    <img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWA3H_yENfmSJHFZ465fPxfbHMeKy7R56Z8W93GjE&s\" alt=\"image\" draggable=\"true\" class=\"photo\" id=\"photo\">",
+			"</div>"
+		]
+	},
+	"lazy": {
+		"scope": "html",
+		"prefix": "lazy",
+		"body": [
+			"<div",
+			"  class=\"page__map _load-map\"",
+			"  data-map=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21100.22365418332!2d22.308059938891592!3d48.618878306174004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473919ba0923b11f%3A0x88400f5d52df9321!2z0KPQttCz0L7RgNC-0LTRgdC60LjQuSDQt9Cw0LzQvtC6LCDQl9Cw0LrQsNGA0L_QsNGC0YHQutC40Lkg0LrRgNCw0LXQstC10LTRh9C10YHQutC40Lkg0LzRg9C30LXQuQ!5e0!3m2!1sru!2sua!4v1616828514253!5m2!1sru!2sua\"",
+			"></div>",
+			"<div class=\"page__image\">",
+			"  <picture>",
+			"    <source data-srcset=\"img/03.webp\" srcset=\"img/1x1.png\" type=\"image/webp\" />",
+			"    <img data-src=\"img/03.jpg\" src=\"img/1x1.png\" alt=\"Картинка\" />",
+			"  </picture>",
+			"</div>"
+		]
+	},
+	"calculator": {
+		"scope": "html",
+		"prefix": "calculator",
+		"body": [
+			"<div class=\"calculator\">",
+			"    <input class=\"calculatorInput\" type=\"text\" readonly />",
+			"",
+			"    <div class=\"calculatorButtons\">",
+			"        <div class=\"calculatorButton__row\">",
+			"            <button class=\"calculatorButtonNumber plus\">+</button>,",
+			"            <button class=\"calculatorButtonNumber\">9</button>,",
+			"            <button class=\"calculatorButtonNumber\">8</button>,",
+			"            <button class=\"calculatorButtonNumber\">7</button>,",
+			"        </div>,",
+			"",
+			"        <div class=\"calculatorButton__row\">",
+			"            <button class=\"calculatorButtonNumber minus\">-</button>,",
+			"            <button class=\"calculatorButtonNumber\">6</button>,",
+			"            <button class=\"calculatorButtonNumber\">5</button>,",
+			"            <button class=\"calculatorButtonNumber\">4</button>,",
+			"        </div>,",
+			"",
+			"        <div class=\"calculatorButton__row\">",
+			"            <button class=\"calculatorButtonNumber multiply\">*</button>,",
+			"            <button class=\"calculatorButtonNumber\">3</button>,",
+			"            <button class=\"calculatorButtonNumber\">2</button>,",
+			"            <button class=\"calculatorButtonNumber\">1</button>,",
+			"        </div>,",
+			"",
+			"        <div class=\"calculatorButton__row\">",
+			"            <button class=\"calculatorButtonNumber division\">/</button>,",
+			"            <button class=\"calculatorButtonNumber\">0</button>,",
+			"            <button class=\"calculatorButtonNumber eval\">=</button>,",
+			"            <button class=\"calculatorButtonNumber reset\">C</button>,",
+			"        </div>,",
+			"    </div>,",
+			"</div>,",
+		],
+	},
+	"more": {
+		"scope": "html",
+		"prefix": "more",
+		"body": [
+			"<div class=\"more\">",
+			"  <div class=\"more__block\">",
+			"    <p class=\"more__text\">",
+			"      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi deleniti",
+			"      sunt est nulla architecto! Exercitationem adipisci a ea expedita",
+			"      perspiciatis reiciendis! Quas itaque earum delectus, repellat numquam",
+			"      cumque placeat voluptatibus ab amet rem minima similique animi dicta ullam",
+			"      soluta reiciendis quod fugit officiis sequi adipisci debitis nisi",
+			"      molestiae optio dolore? Harum nemo a, quisquam repudiandae ipsum aliquam",
+			"      inventore autem recusandae nisi facilis maiores eaque sed tenetur cum",
+			"      delectus quibusdam placeat minima et ducimus officiis! Sequi facilis a",
+			"      dolores sunt sint repellat voluptates, accusamus nulla necessitatibus!",
+			"      Cupiditate commodi quasi obcaecati reiciendis rem? Illo blanditiis dolor",
+			"      commodi atque maxime earum pariatur? Eligendi?",
+			"    </p>",
+			"    <div class=\"more__bottom\"></div>",
+			"  </div>",
+			"  <button type=\"button\" class=\"more__button\">Показать еще</button>",
+			"</div>"
+		]
+	},
+	"pages": {
+		"scope": "html",
+		"prefix": "pages",
+		"body": [
+			"<div class=\"pages\">",
+			"  <ul class=\"pages-list\">",
+			"    <li>",
+			"      <a href=\"#\" class=\"pages-list__link\">1</a>",
+			"    </li>",
+			"    <li>",
+			"      <a href=\"#\" class=\"pages-list__link\">2</a>",
+			"    </li>",
+			"    <li>",
+			"      <a href=\"#\" class=\"pages-list__link\">3</a>",
+			"    </li>",
+			"    <li>",
+			"      <a href=\"#\" class=\"pages-list__link\">4</a>",
+			"    </li>",
+			"    <li>",
+			"      <a href=\"#\" class=\"pages-list__link\">5</a>",
+			"    </li>",
+			"  </ul>",
+			"</div>"
+		]
+	},
+	"pages2": {
+		"scope": "html",
+		"prefix": "pages2",
+		"body": [
+			"<section>",
+			"    <div class=\"data-container\"></div>",
+			"    <div id=\"pagination-demo1\"></div>",
+			"    <div class=\"data-container\"></div>",
+			"    <div id=\"pagination-demo2\"></div>",
+			"    <div class=\"data-container\"></div>",
+			"    <div id=\"pagination-demo3\"></div>",
+			"    <div class=\"data-container\"></div>",
+			"    <div id=\"pagination-demo4\"></div>",
+			"</section>"
+		]
+	},
+	"popup": {
+		"scope": "html",
+		"prefix": "popup",
+		"body": [
+			"<div class=\"popup\">",
+			"  <div class=\"popup__content\">",
+			"    <div class=\"popup-top\">",
+			"      <h2 class=\"popup-top__title\">Title</h2>",
+			"      <button type=\"button\" class=\"popup-top__cross\"></button>",
+			"    </div>",
+			"    <p class=\"popup__block\">",
+			"      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis veritatis",
+			"      asperiores error modi perferendis. Explicabo, mollitia iste aliquid omnis",
+			"      maxime eaque dicta expedita? Itaque unde neque omnis dignissimos! Porro",
+			"      vel iusto dolore consequatur libero reiciendis deleniti doloribus",
+			"      molestiae odit enim! Nihil iusto culpa amet sed enim earum exercitationem",
+			"      dignissimos dolores necessitatibus molestias sapiente sit quod maxime",
+			"      ipsam est, esse eaque aliquid. Aliquam porro assumenda obcaecati. Hic in",
+			"      ex blanditiis, dolor laborum, aliquam illo ab, doloribus nemo magnam",
+			"      voluptatibus obcaecati omnis excepturi culpa optio. Cum iste voluptatibus",
+			"      molestias. Ratione, necessitatibus. Doloremque repellat repudiandae",
+			"      recusandae, quis error quae eum architecto ipsum doloribus. Lorem ipsum",
+			"      dolor sit amet consectetur adipisicing elit. Impedit quas autem, doloribus",
+			"      veniam laboriosam nihil totam eos quasi eaque. Aspernatur, optio, debitis",
+			"      quae aliquid est sit laudantium explicabo odio dignissimos tempora alias",
+			"      enim ab inventore ex error distinctio illum consectetur ullam unde",
+			"      praesentium dolorem corporis possimus deserunt fugit. Animi, numquam?",
+			"      Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odio sed",
+			"      molestiae beatae accusamus, maiores accusantium dolores. Rem sit soluta,",
+			"      consectetur nisi minima necessitatibus voluptatum, dignissimos quidem",
+			"      ipsam quaerat incidunt exercitationem eius modi. Quibusdam non modi omnis",
+			"      recusandae architecto itaque aperiam, veniam sequi. Dolores libero",
+			"      doloremque laborum, nobis voluptatum natus. Lorem ipsum dolor sit amet",
+			"      consectetur adipisicing elit. Itaque quis et repellendus sequi sapiente",
+			"      atque temporibus architecto iste autem incidunt nemo enim dolore at",
+			"      corrupti obcaecati inventore cum fuga ducimus, ullam neque in porro",
+			"      voluptatem tenetur culpa. Tenetur nesciunt hic neque. Quas accusamus, enim",
+			"      culpa at voluptas perspiciatis. Nemo, enim.",
+			"    </p>",
+			"  </div>",
+			"</div>"
+		]
+	},
+	"quantity": {
+		"scope": "html",
+		"prefix": "quantity",
+		"body": [
+			"<div class=\"quantity\">",
+			"  <button class=\"quantity__minus quantity__button\">–</button>",
+			"  <div class=\"quantity__number quantity__button\">0</div>",
+			"  <button class=\"quantity__plus quantity__button\">+</button>",
+			"</div>"
+		]
+	},
+	"range": {
+		"scope": "html",
+		"prefix": "range",
+		"body": [
+			"<div id=\"range\"></div>",
+			"<input type=\"text\" id=\"price-min\" readonly>",
+			"<input type=\"text\" id=\"price-max\" readonly>",
+		]
+	},
+	"rating": {
+		"scope": "html",
+		"prefix": "rating",
+		"body": [
+			"<div class=\"rating\">",
+			"  <input type=\"radio\" id=\"radio1\" />",
+			"  <label for=\"radio1\"></label>",
+			"",
+			"  <input type=\"radio\" id=\"radio2\" />",
+			"  <label for=\"radio2\"></label>",
+			"",
+			"  <input type=\"radio\" id=\"radio3\" />",
+			"  <label for=\"radio3\"></label>",
+			"",
+			"  <input type=\"radio\" id=\"radio4\" />",
+			"  <label for=\"radio4\"></label>",
+			"",
+			"  <input type=\"radio\" id=\"radio5\" />",
+			"  <label for=\"radio5\"></label>",
+			"</div>"
+		]
+	},
+	"rating2": {
+		"scope": "html",
+		"prefix": "rating2",
+		"body": [
+			"<div class=\"rating rating_set\">",
+			"  <div class=\"rating__body\">",
+			"    <div class=\"rating__active\"></div>",
+			"    <div class=\"rating__items\">",
+			"      <input type=\"radio\" class=\"rating__item\" value=\"1\" name=\"rating\" />",
+			"      <input type=\"radio\" class=\"rating__item\" value=\"2\" name=\"rating\" />",
+			"      <input type=\"radio\" class=\"rating__item\" value=\"3\" name=\"rating\" />",
+			"      <input type=\"radio\" class=\"rating__item\" value=\"4\" name=\"rating\" />",
+			"      <input type=\"radio\" class=\"rating__item\" value=\"5\" name=\"rating\" />",
+			"    </div>",
+			"  </div>",
+			"  <p class=\"rating__value\">1.6</p>",
+			"</div>"
+		]
+	},
+	"select": {
+		"scope": "html",
+		"prefix": "select",
+		"body": [
+			"<div class=\"select\">",
+			"  <div class=\"select-top\">",
+			"    <span class=\"select-top__text\">Выбрать из списка</span>",
+			"    <span class=\"select-top__arrow\"></span>",
+			"  </div>",
+			"  <ul class=\"select-menu\">",
+			"    <li data-item=\"Выбор 1\" class=\"select-menu__item\">Выбор 1</li>",
+			"    <li data-item=\"Выбор 2\" class=\"select-menu__item\">Выбор 2</li>",
+			"    <li data-item=\"Выбор 3\" class=\"select-menu__item\">Выбор 3</li>",
+			"    <li data-item=\"Выбор 4\" class=\"select-menu__item\">Выбор 4</li>",
+			"    <li data-item=\"Выбор 5\" class=\"select-menu__item\">Выбор 5</li>",
+			"    <li data-item=\"Выбор 6\" class=\"select-menu__item\">Выбор 6</li>",
+			"  </ul>",
+			"</div>"
+		]
+	},
+	"spoiler": {
+		"scope": "html",
+		"prefix": "spoiler",
+		"body": [
+			"<div class=\"accordion\">",
+			"  <div class=\"accordion__block\">",
+			"    <div class=\"accordion__title\" data-number=\"1\">",
+			"      <p class=\"accordion__text\">",
+			"        Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+			"      </p>",
+			"      <span class=\"accordion__icon\" data-number=\"1\"></span>",
+			"    </div>",
+			"    <div class=\"accordion__content\" data-number=\"1\">",
+			"      <p class=\"accordion__text\">Content 1</p>",
+			"    </div>",
+			"  </div>",
+			"  <div class=\"accordion__block\">",
+			"    <div class=\"accordion__title\" data-number=\"2\">",
+			"      <p class=\"accordion__text\">",
+			"        Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+			"      </p>",
+			"      <span class=\"accordion__icon\" data-number=\"2\"></span>",
+			"    </div>",
+			"    <div class=\"accordion__content\" data-number=\"2\">",
+			"      <p class=\"accordion__text\">Content 2</p>",
+			"    </div>",
+			"  </div>",
+			"  <div class=\"accordion__block\">",
+			"    <div class=\"accordion__title\" data-number=\"3\">",
+			"      <p class=\"accordion__text\">",
+			"        Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+			"      </p>",
+			"      <span class=\"accordion__icon\" data-number=\"3\"></span>",
+			"    </div>",
+			"    <div class=\"accordion__content\" data-number=\"3\">",
+			"      <p class=\"accordion__text\">Content 3</p>",
+			"    </div>",
+			"  </div>",
+			"</div>"
+		]
+	},
+	"speedline": {
+		"scope": "html",
+		"prefix": "speedline",
+		"body": [
+			"<div class=\"marquee-container\">",
+			"  <div id=\"marquee\" class=\"marquee\">",
+			"    Это бегущая строка с контролем скорости и длины текста.",
+			"  </div>",
+			"</div>"
+		]
+	},
+	"swiper": {
+		"scope": "html",
+		"prefix": "swiper",
+		"body": [
+			"<div class=\"swiper\">",
+			"  <div class=\"swiper-wrapper\">",
+			"    <div class=\"swiper-slide\">",
+			"      Slide 1",
+			"      <!-- <img src=\"\" alt=\"image\" class=\"swiper-lazy\"> -->",
+			"      <!-- <div class=\"swiper-lazy-preloader\"></div> -->",
+			"    </div>",
+			"    <div class=\"swiper-slide\">",
+			"      Slide 2",
+			"      <!-- <img src=\"\" alt=\"image\" class=\"swiper-lazy\"> -->",
+			"      <!-- <div class=\"swiper-lazy-preloader\"></div> -->",
+			"    </div>",
+			"    <div class=\"swiper-slide\">",
+			"      Slide 3",
+			"      <!-- <img src=\"\" alt=\"image\" class=\"swiper-lazy\"> -->",
+			"      <!-- <div class=\"swiper-lazy-preloader\"></div> -->",
+			"    </div>",
+			"  </div>",
+			"  <!-- <div class=\"swiper-pagination\"></div> -->",
+			"  <div class=\"swiper-button-prev\"></div>",
+			"  <div class=\"swiper-button-next\"></div>",
+			"  <!-- <div class=\"swiper-scrollbar\"></div> -->",
+			"</div>"
+		]
+	},
+	"switch": {
+		"scope": "html",
+		"prefix": "switch",
+		"body": [
+			"<div class=\"switch\">",
+			"    <input type=\"checkbox\" class=\"switch__input\" id=\"switch__input\">",
+			"    <label for=\"switch__input\" class=\"switch__label\"></label>",
+			"</div>"
+		]
+	},
+	"tabs": {
+		"scope": "html",
+		"prefix": "tabs",
+		"body": [
+			"<div class=\"tabs\">",
+			"  <div class=\"tabs__buttons\">",
+			"    <button class=\"tabs__button\" data-number=\"1\">Tab 1</button>",
+			"    <button class=\"tabs__button\" data-number=\"2\">Tab 2</button>",
+			"    <button class=\"tabs__button\" data-number=\"3\">Tab 3</button>",
+			"  </div>",
+			"  <div class=\"tabs__contents\">",
+			"    <p class=\"tabs__text\" data-number=\"1\">Tab content 1</p>",
+			"    <p class=\"tabs__text\" data-number=\"2\">Tab content 2</p>",
+			"    <p class=\"tabs__text\" data-number=\"3\">Tab content 3</p>",
+			"  </div>",
+			"</div>"
+		]
+	},
+	"timer": {
+		"scope": "html",
+		"prefix": "timer",
+		"body": [
+			"<div class=\"timer\">",
+			"    <div class=\"timer__line\"></div>",
+			"    <div class=\"timer__body\">",
+			"        <div class=\"timer__counter\">",
+			"            <span>1</span>",
+			"            <span>2</span>",
+			"            <span>3</span>",
+			"            <span>4</span>",
+			"            <span>5</span>",
+			"            <span>6</span>",
+			"            <span>7</span>",
+			"            <span>8</span>",
+			"            <span>9</span>",
+			"            <span>10</span>",
+			"        </div>",
+			"    </div>",
+			"</div>"
+		]
+	},
+	"toTop": {
+		"scope": "html",
+		"prefix": "top",
+		"body": [
+			"<div id=\"marker\"></div>",
+      		"<a href=\"#marker\" class=\"toTop\"></a>"
+		]
+	},
+	"video": {
+		"scope": "html",
+		"prefix": "video",
+		"body": [
+			"<video width=\"400\" height=\"200\" poster=\"\" id=\"video\">",
+			"  <source src=\"video.mp4\" type=\"video/mp4\">",
+			"</video>",
+			"<progress id=\"progress\" max=\"100\" value=\"0\"></progress>",
+			"<button id=\"play\">Play</button>",
+			"<button id=\"pause\">Pause</button>",
+			"<button id=\"stop\">Stop</button>",
+			"<button id=\"more\">More</button>",
+			"<button id=\"slow\">Slow</button>",
+			"<button id=\"normal\">Normal</button>",
+			"<input id=\"volume\" type=\"range\" min=\"0\" max=\"100\">"
+		]
+	},
+	"zoom": {
+		"scope": "html",
+		"prefix": "zoom",
+		"body": [
+			"<div class=\"img-zoom-container\">",
+			"    <img id=\"myimage\" src=\"@img/img-girl.jpg\" width=\"300\" height=\"240\" alt=\"Girl\">",
+			"    <div id=\"myresult\" class=\"img-zoom-result\"></div>",
+			"</div>"
+		]
+	},
+	"adaptiveBg": {
+		"scope": "scss",
+		"prefix": "isb",
+		"body": [
+			"@include backgroundBg($1, $2, $3, $4, $5)",
+		],
+	},
+	"adaptiveFont": {
+		"scope": "scss",
+		"prefix": "isf",
+		"body": [
+			"@include mixins.adaptiveValue('font-size', max$1, min$2, 0, variables.\\$maxWidth, 992);",
+		],
+	},
+	"adaptiveValue": {
+		"scope": "scss",
+		"prefix": "isv",
+		"body": [
+			"@include mixins.adaptiveValue('$1', max$2, min$3, 0, variables.\\$maxWidth, 992);",
+		],
+	},
+	"mediaScreen575": {
+		"scope": "scss",
+		"prefix": "md5",
+		"body": [
+			"@media (max-width: 575px) {",
+			"    $1",
+			"}",
+		],
+	},
+	"mediaScreen768": {
+		"scope": "scss",
+		"prefix": "md7",
+		"body": [
+			"@media (max-width: 768px) {",
+			"    $1",
+			"}",
+		],
+	},
+	"mediaScreen992": {
+		"scope": "scss",
+		"prefix": "md9",
+		"body": [
+			"@media (max-width: 992px) {",
+			"    $1",
+			"}",
+		],
+	},
+	"transition": {
+		"scope": "scss",
+		"prefix": "tr",
+		"body": [
+			"transition: all 250ms ease;",
+		],
+	},
+	"flexCenter": {
+		"scope": "scss",
+		"prefix": "dfc",
+		"body": [
+			"display: flex;",
+			"align-items: center;",
+			"justify-content: center;",
+		],
+	},
+	"flexBetween": {
+		"scope": "scss",
+		"prefix": "dfs",
+		"body": [
+			"display: flex;",
+			"align-items: center;",
+			"justify-content: space-between;",
+		],
+	},
+	"querySelector": {
+		"scope": "javascript",
+		"prefix": "dq",
+		"body": [
+			"const $1 = document.querySelector('.$1')",
+		],
+	}
+}

@@ -1,0 +1,15 @@
+@use "../mixins" as mixins;
+
+.toTop {
+  background-color: black;
+  border-radius: 50%;
+  @include mixins.adaptiveValue("width", 50, 40, 0);
+  @include mixins.adaptiveValue("height", 50, 40, 0);
+
+}
+
+.toTop.active {
+  position: fixed;
+  @include mixins.adaptiveValue("right", 100, 25, 0);
+  @include mixins.adaptiveValue("bottom", 100, 25, 0);
+}
