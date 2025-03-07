@@ -24,7 +24,7 @@ jobs:
             env:
               GGSHIELD_API_KEY: ${{ secrets.API_GITTGUARGIAN }}
             with:
-              args: "path ./"
+              args: "path test-ci-cd/"
         
 
     build:
