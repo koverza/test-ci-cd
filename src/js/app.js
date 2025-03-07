@@ -40,11 +40,6 @@ window.addEventListener('load', () => {
 
 
 
-
-
-
-    
-
     document.getElementById('telegramForm').addEventListener('submit', async function (e) {
         e.preventDefault(); // Предотвращаем перезагрузку страницы
 
