@@ -15,17 +15,21 @@ jobs:
             - name: Checkout кода
               uses: actions/checkout@v3
 
-    gitduardian:
+    gitGuardian:
         runs-on: ubuntu-latest
+        needs: checkout
         steps:
-            - name: GitGuardian Scan
-              uses: GitGuardian/ggshield-action@v1
-              with:
-                  api_key: ${{ secrets.API_GITTGUARGIAN }}
+          - name: GitGuardian Scan
+            uses: GitGuardian/ggshield-action@v1
+            env:
+              GGSHIELD_API_KEY: ${{ secrets.API_GITTGUARGIAN }}
+            with:
+              args: scan
+        
 
     build:
         runs-on: ubuntu-latest
-        needs: checkout
+        needs: gitGuardian
         steps:
             - name: Установка Node.js
               uses: actions/setup-node@v3
