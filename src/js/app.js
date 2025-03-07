@@ -36,10 +36,6 @@ window.addEventListener('load', () => {
     // formTelegram()
 
 
-
-
-
-
     document.getElementById('telegramForm').addEventListener('submit', async function (e) {
         e.preventDefault(); // Предотвращаем перезагрузку страницы
 
