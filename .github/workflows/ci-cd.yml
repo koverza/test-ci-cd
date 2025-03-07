@@ -22,7 +22,7 @@ jobs:
             - name: GitGuardian Scan
               uses: GitGuardian/ggshield-action@v1
               env:
-                  GGSHIELD_API_KEY: ${{ secrets.API_GITTGUARGIAN }}
+                  GGSHIELD_API_KEY: ${{ secrets.API_GITGUARDIAN }}
 
     # sonar:
     #     name: SonarQube
