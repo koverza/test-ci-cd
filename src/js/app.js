@@ -34,6 +34,7 @@ import { swipe, formTelegram, i18n, sendServer } from './$/index.js';
 
 window.addEventListener('load', () => {
     // formTelegram()
+    
     document.getElementById('telegramForm').addEventListener('submit', async function (e) {
         e.preventDefault(); // Предотвращаем перезагрузку страницы
 
