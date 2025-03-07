@@ -1,7 +1,4 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "git.autorefresh": true,
-  "git.confirmSync": false,
-  "git.path": "C:\\Program Files\\Git\\bin\\git.exe"
+  "editor.formatOnSave": true
 }
