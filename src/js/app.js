@@ -35,7 +35,6 @@ import { swipe, formTelegram, i18n, sendServer } from './$/index.js';
 window.addEventListener('load', () => {
     // formTelegram()
 
-    
     document.getElementById('telegramForm').addEventListener('submit', async function (e) {
         e.preventDefault(); // Предотвращаем перезагрузку страницы
 
@@ -49,7 +48,8 @@ window.addEventListener('load', () => {
 
         try {
             // Отправка POST-запроса на сервер
-            const response = await fetch('http://localhost:3002/send-email', { // send
+            const response = await fetch('http://localhost:3002/send-email', {
+                // send
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
