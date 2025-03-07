@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+    <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <!-- Адаптивность  -->
@@ -24,24 +24,24 @@
   <!-- Favicon -->
   <link rel="icon" href="favicon.ico?ver=p8623" type="image/x-icon" />
   <!-- Styles -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20250306162936" /> -->
-  <!-- <link rel="stylesheet" href="https://unpkg.com/tippy.js/dist/tippy.css?_v=20250306162936" /> -->
-  <link rel="stylesheet" href="css/style.min.css?_v=20250306162936" />
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> -->
+  <!-- <link rel="stylesheet" href="https://unpkg.com/tippy.js/dist/tippy.css" /> -->
+  <link rel="stylesheet" href="css/style.min.css" />
 
   <!-- Title page -->
   <title>Home</title>
 </head>
-  <body>
-    <main class="wrapper max-width">
-      <header class="header" id="header">
+    <body>
+        <div class="wrapper max-width">
+            <header class="header" id="header">
     <div class="container">
         <div class="header__inner">
 
         </div>
     </div>
 </header>
-      <main class="main">
-        <form class="sendForm" action="#" method="post">
+            <main class="main">
+                <!-- <form class="sendForm" action="#" method="post">
           <fieldset>
             <legend>Регистрация</legend>
             
@@ -72,20 +72,28 @@
             <button type="submit" class="sendForm__button">Зарегистрироваться</button>
 
           </fieldset>
-        </form>
-      </main>
-      <footer class="footer" id="footer">
+        </form> -->
+
+                <form id="telegramForm" method="POST" >
+                    <input type="text" name="name" id="name" placeholder="Ваше имя" required />
+                    <input type="email" name="email" id="email" placeholder="Ваш email" required />
+                    <textarea name="message" id="message" placeholder="Ваше сообщение"></textarea>
+                    <button type="submit">Отправить</button>
+                </form>
+                <div id="result"></div>
+            </main>
+            <footer class="footer" id="footer">
     <div class="container">
         <div class="footer__inner">
             
         </div>
     </div>
 </footer>
-    </main>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20250306162936"></script> -->
-<!-- <script src="https://unpkg.com/@popperjs/core@2?_v=20250306162936"></script>
-<script src="https://unpkg.com/tippy.js@6?_v=20250306162936"></script> -->
-<script src="js/app.min.js?_v=20250306162936"></script>
+        </div>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+<!-- <script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script> -->
+<script src="js/app.min.js"></script>
 
-  </body>
+    </body>
 </html>

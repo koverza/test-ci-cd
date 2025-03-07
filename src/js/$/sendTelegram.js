@@ -1,7 +1,7 @@
 export function formTelegram() {
     console.log("formTelegram works");
 
-    document.getElementById('formTelegram').addEventListener('submit', async function (e) {
+    document.getElementById('telegramForm').addEventListener('submit', async function (e) {
         e.preventDefault(); // предотвратить перезагрузку страницы
 
         // Сбор данных из формы
@@ -13,7 +13,7 @@ export function formTelegram() {
         };
 
         try {
-            const response = await fetch('http://localhost:3001/send', {
+            const response = await fetch('http://localhost:3002/send', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

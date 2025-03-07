@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
-  @@include('html/head.html',{ "title":"Home" })
-  <body>
-    <main class="wrapper max-width">
-      @@include('html/header.html',{})
-      <main class="main">
-        <form class="sendForm" action="#" method="post">
+    @@include('html/head.html',{ "title":"Home" })
+    <body>
+        <div class="wrapper max-width">
+            @@include('html/header.html',{})
+            <main class="main">
+                <!-- <form class="sendForm" action="#" method="post">
           <fieldset>
             <legend>Регистрация</legend>
             
@@ -36,10 +36,18 @@
             <button type="submit" class="sendForm__button">Зарегистрироваться</button>
 
           </fieldset>
-        </form>
-      </main>
-      @@include('html/footer.html',{})
-    </main>
-    @@include('html/script.html',{})
-  </body>
+        </form> -->
+
+                <form id="telegramForm" method="POST" >
+                    <input type="text" name="name" id="name" placeholder="Ваше имя" required />
+                    <input type="email" name="email" id="email" placeholder="Ваш email" required />
+                    <textarea name="message" id="message" placeholder="Ваше сообщение"></textarea>
+                    <button type="submit">Отправить</button>
+                </form>
+                <div id="result"></div>
+            </main>
+            @@include('html/footer.html',{})
+        </div>
+        @@include('html/script.html',{})
+    </body>
 </html>
