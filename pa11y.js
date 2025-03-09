@@ -1,11 +1,9 @@
-// validate-pa11y-all.js
-
 import { glob } from 'glob';
 import { exec } from 'child_process';
 import path from 'path';
 import process from 'process';
 
-console.log('Запуск скрипта validate-pa11y-all.js');
+console.log('Запуск скрипта pa11y.js');
 
 // Поиск всех HTML-файлов в папке dist и ее поддиректориях
 glob('dist/**/*.html', (err, files) => {
