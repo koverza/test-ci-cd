@@ -10,7 +10,7 @@
         "validate:html": "java -jar ./node_modules/vnu-jar/build/dist/vnu.jar --html dist/*.html",
         "validate:css": "java -jar ./node_modules/vnu-jar/build/dist/vnu.jar --css dist/*.css",
         "validate:js": "eslint src/js/app.js",
-        "validate:pa11y:all": "node pa11y.js",
+        "validate:pa11y": "node pa11y.js",
         "validate:lighthouse-mobile": "lighthouse http://localhost:3000 --output html --output-path ./lighthouse-mobile.html --view --chrome-flags=\"--headless\"",
         "validate:lighthouse-desktop": "lighthouse http://localhost:3000 --output html --output-path ./lighthouse-desktop.html --view --preset=desktop --chrome-flags=\"--headless\"",
         "validate:lighthouse": "yarn validate:lighthouse-desktop && yarn validate:lighthouse-mobile",
