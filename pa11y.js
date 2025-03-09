@@ -4,24 +4,27 @@ import { glob } from 'glob';
 import { exec } from 'child_process';
 import path from 'path';
 import process from 'process';
-console.log("Запуск скрипта validate-pa11y-all.js");
 
+console.log('Запуск скрипта validate-pa11y-all.js');
+
+// Поиск всех HTML-файлов в папке dist и ее поддиректориях
 glob('dist/**/*.html', (err, files) => {
     if (err) {
         console.error('Ошибка поиска файлов:', err);
         process.exit(1);
     }
 
+    // Выводим список найденных файлов, чтобы убедиться, что glob работает
+    console.log('Glob запустился, найденные файлы:', files);
+
     if (files.length === 0) {
         console.log('Файлы не найдены в папке dist.');
         process.exit(0);
     }
 
-    console.log('Начинаем проверку всех HTML-файлов в папке dist:');
-    console.log('Найденные файлы:', files);
-
     files.forEach(file => {
         const absolutePath = path.resolve(file);
+        // Формируем корректный URL для локального файла, кодируя путь (если в пути есть не-ASCII символы)
         const fileUrl = `file://${encodeURI(absolutePath)}`;
         const fileName = path.basename(file);
         const outputFile = `pa11y-${fileName}.html`;
