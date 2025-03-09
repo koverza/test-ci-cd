@@ -23,7 +23,7 @@ glob('dist/**/*.html', (err, files) => {
     files.forEach(file => {
         const absolutePath = path.resolve(file);
         // Формируем корректный URL для локального файла, кодируя путь (если в пути есть не-ASCII символы)
-        const fileUrl = `file://${absolutePath}`;
+        const fileUrl = `file://${encodeURI(absolutePath)}`;
         const fileName = path.basename(file);
         const outputFile = `pa11y-${fileName}.html`;
         const cmd = `pa11y "${fileUrl}" --output html --output-path "${outputFile}" --chrome-flags="--headless"`;
