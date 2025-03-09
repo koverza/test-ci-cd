@@ -28,5 +28,6 @@ export *  from "./toTop.js";
 export *  from "./typed.js"; 
 export *  from "./video.js"; 
 export *  from "./webp.js";
+export *  from "./form.js";
 export *  from "./zoom.js";
 

@@ -1,0 +1,18 @@
+{
+    "urls": [
+      "https://example.com/",
+      "https://example.com/about",
+      "https://example.com/contact"
+    ],
+    "defaults": {
+      "timeout": 30000,
+      "standard": "WCAG2AA",
+      "includeNotices": true,
+      "includeWarnings": true,
+      "chromeLaunchConfig": {
+        "args": ["--no-sandbox", "--disable-setuid-sandbox"]
+      }
+    },
+    "threshold": 5
+  }
+  

@@ -1,5 +1,5 @@
-export async function sendTelegram({ username, email, message }) {
-    console.log("sendTelegram works");
+export async function sendEmail({ username, email, message }) {
+    console.log('sendEmail works');
 
     const data = {
         name: username.value,
@@ -8,7 +8,7 @@ export async function sendTelegram({ username, email, message }) {
     };
 
     try {
-        const response = await fetch('http://localhost:3002/send/telegram', {
+        const response = await fetch('http://localhost:3002/send/mailjet', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -28,4 +28,3 @@ export async function sendTelegram({ username, email, message }) {
         console.error('❌', error.message);
     }
 }
-
