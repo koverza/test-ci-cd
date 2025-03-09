@@ -5,7 +5,6 @@
     "main": "gulpfile.js",
     "type": "module",
     "scripts": {
-        "prepare": "husky install",
         "dev": "gulp",
         "server": "node server.js",
         "validate:html": "java -jar ./node_modules/vnu-jar/build/dist/vnu.jar --html dist/*.html",
