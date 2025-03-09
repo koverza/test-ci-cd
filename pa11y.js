@@ -1,10 +1,9 @@
-// validate-pa11y-all.js
 import { glob } from 'glob';
 import { exec } from 'child_process';
 import path from 'path';
 import process from 'process';
 
-glob('dist/*.html', (err, files) => {
+glob('dist/**/*.html', (err, files) => {
     if (err) {
         console.error('Ошибка поиска файлов:', err);
         process.exit(1);
@@ -20,19 +19,22 @@ glob('dist/*.html', (err, files) => {
         const absolutePath = path.resolve(file);
         // Формируем URL с префиксом file:// и кодируем его
         const fileUrl = `file://${encodeURI(absolutePath)}`;
+        // Получаем имя файла (без пути)
+        const fileName = path.basename(file);
         // Формируем имя файла для отчёта
-        const outputFile = `pa11y-${path.basename(file)}.html`;
+        const outputFile = `pa11y-${fileName}.html`;
         // Команда для запуска pa11y с нужными параметрами
         const cmd = `pa11y "${fileUrl}" --output html --output-path "${outputFile}" --chrome-flags="--headless"`;
 
-        console.log(`🔍 Проверка ${fileUrl}...`);
+        // Выводим имя файла, который проверяется
+        console.log(`Проверяется файл: ${fileName}`);
 
         exec(cmd, (error, stdout, stderr) => {
             if (error) {
-                console.error(`❌ Ошибка при проверке ${fileUrl}:`, error.message);
+                console.error(`❌ Ошибка при проверке ${fileName}:`, error.message);
             } else {
                 console.log(
-                    `✅ Проверка ${fileUrl} завершена. Результаты сохранены в ${outputFile}`
+                    `✅ Проверка ${fileName} завершена. Результаты сохранены в ${outputFile}`
                 );
             }
         });
