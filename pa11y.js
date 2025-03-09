@@ -1,3 +1,5 @@
+// validate-pa11y-all.js
+
 import { glob } from 'glob';
 import { exec } from 'child_process';
 import path from 'path';
@@ -14,19 +16,16 @@ glob('dist/**/*.html', (err, files) => {
         process.exit(0);
     }
 
+    console.log('Начинаем проверку всех HTML-файлов в папке dist:');
+    console.log('Найденные файлы:', files);
+
     files.forEach(file => {
-        // Получаем абсолютный путь к файлу
         const absolutePath = path.resolve(file);
-        // Формируем URL с префиксом file:// и кодируем его
         const fileUrl = `file://${encodeURI(absolutePath)}`;
-        // Получаем имя файла (без пути)
         const fileName = path.basename(file);
-        // Формируем имя файла для отчёта
         const outputFile = `pa11y-${fileName}.html`;
-        // Команда для запуска pa11y с нужными параметрами
         const cmd = `pa11y "${fileUrl}" --output html --output-path "${outputFile}" --chrome-flags="--headless"`;
 
-        // Выводим имя файла, который проверяется
         console.log(`Проверяется файл: ${fileName}`);
 
         exec(cmd, (error, stdout, stderr) => {
