@@ -34,5 +34,5 @@ import { form } from './other/index.js';
 // zoom,
 
 window.addEventListener('load', () => {
-    form();
+    
 });

@@ -1,18 +1,20 @@
-.zone1{
-    border: 1px solid grey;
-    width: 100%;
-    height: 100px;
-    padding: 10px;
+.dragItem {
+    width: 50px;
+    height: 50px;
+    background-color: red;
 }
-.zone2{
-border: 1px solid grey;
-width: 100%;
-height: 100px;
-padding: 10px;
-margin-top: 10px;
 
+.dropZone {
+    width: 400px;
+    height: 100px;
+    background-color: rgb(236, 233, 233);
+    border: 1px solid rgb(137, 137, 137);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-img{
-width: 50px;
-height: 50px;
+
+.dropZoneText {
+    color: grey;
+    font-size: 24px;
 }

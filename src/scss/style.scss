@@ -25,47 +25,5 @@
 /* All pages */
 // @use 'pages/home' as *;
 
-.sendForm {
-    border: 1px solid black;
-    width: 500px;
-    background-color: rgb(157, 146, 146);
-    padding: 5px;
 
-    legend {
-        font-weight: bold;
-        color: black;
-    }
-
-    &__box {
-        margin-top: 20px;
-    }
-
-    &__label {
-        font-style: italic;
-        color: black;
-    }
-
-    &__input {
-        width: 100%;
-        margin-top: 5px;
-        padding: 5px;
-    }
-
-    &__error {
-        color: rgb(197, 68, 68);
-        font-size: 13px;
-        margin-top: 4px;
-    }
-
-    &__input::placeholder {
-        padding: 5px;
-    }
-
-    &__button {
-        border: 1px solid rgb(0, 0, 0);
-        padding: 5px;
-        margin-top: 10px;
-        color: black;
-    }
-}
 

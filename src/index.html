@@ -1,79 +1,11 @@
 <!doctype html>
 <html lang="en">
     @@include('html/head.html',{ "title":"Home" })
-
     <body>
         <div class="wrapper max-width">
             @@include('html/header.html',{})
             <main class="main">
-                <form class="sendForm" method="POST">
-                    <fieldset>
-                        <legend>Регистрация</legend>
 
-                        <div class="sendForm__box">
-                            <label class="sendForm__label" for="username">Имя пользователя:</label>
-                            <input
-                                class="sendForm__input username"
-                                type="text"
-                                id="username"
-                                name="username"
-                                placeholder="Введите имя пользователя"
-                            />
-                            <p class="sendForm__error usernameError"></p>
-                        </div>
-
-                        <div class="sendForm__box">
-                            <label class="sendForm__label" for="email">Электронная почта:</label>
-                            <input
-                                class="sendForm__input email"
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="example@mail.com"
-                            />
-                            <p class="sendForm__error emailError"></p>
-                        </div>
-
-                        <div class="sendForm__box">
-                            <label class="sendForm__label" for="password">Пароль:</label>
-                            <input
-                                class="sendForm__input password"
-                                type="password"
-                                id="password"
-                                name="password"
-                                placeholder="Введите пароль"
-                            />
-                            <p class="sendForm__error passwordError"></p>
-                        </div>
-
-                        <div class="sendForm__box">
-                            <label class="sendForm__label" for="confirmPassword"
-                                >Подтверждение пароля:</label
-                            >
-                            <input
-                                class="sendForm__input confirmPassword"
-                                type="password"
-                                id="confirmPassword"
-                                name="confirmPassword"
-                                placeholder="Повторите пароль"
-                            />
-                            <p class="sendForm__error confirmPasswordError"></p>
-                        </div>
-
-                        <div class="sendForm__box">
-                            <label class="sendForm__label" for="message">Описание:</label>
-                            <input
-                                class="sendForm__input message"
-                                name="message"
-                                id="message"
-                                placeholder="Ваше описание"
-                            ></input>
-                            <p class="sendForm__error messageError"></p>
-                        </div>
-
-                        <button type="submit" class="sendForm__button">Зарегистрироваться</button>
-                    </fieldset>
-                </form>
             </main>
             @@include('html/footer.html',{})
         </div>

@@ -1,23 +1,13 @@
 @charset "UTF-8";
-
 /* Variables */
-
 /* Fonts */
-
 /* Dimensions */
-
 /* Colors */
-
 /* Mixins */
-
 /* Variables */
-
 /* Zero */
-
 /* Variables */
-
 /* Variables */
-
 * {
   padding: 0px;
   margin: 0px;
@@ -27,8 +17,7 @@
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
@@ -113,23 +102,16 @@ h6 {
 }
 
 /* Templates */
-
 /* All components files*/
-
 /* Variables */
-
 /* полоса прокрутки (скроллбар) */
-
 ::-webkit-scrollbar {
-  width: 10px;
-  /* ширина для вертикального скролла */
-  height: 8px;
-  /* высота для горизонтального скролла */
+  width: 10px; /* ширина для вертикального скролла */
+  height: 8px; /* высота для горизонтального скролла */
   background-color: #c6c6c6;
 }
 
 /* ползунок скроллбара */
-
 ::-webkit-scrollbar-thumb {
   background-color: #7f7f7f;
   border-radius: 9em;
@@ -141,7 +123,6 @@ h6 {
 }
 
 /* Стрелки */
-
 ::-webkit-scrollbar-button:vertical:start:decrement {
   background: linear-gradient(120deg, #02141a 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(240deg, #02141a 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(0deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
   background-color: #f6f8f4;
@@ -163,139 +144,45 @@ h6 {
 }
 
 /* All Scss files*/
-
 /* Fonts */
-
 /* IcoMoon */
-
 /* Font Awesome */
-
 /* Ibg */
-
+/* Form */
 /* Tippy */
-
 /* Swiper */
-
 /* Light Gallery */
-
 /* Animation */
-
 /* toTop */
-
 /* Loaders */
-
 /* Burger Menu */
-
 /* More */
-
 /* Pagination */
-
 /* Pagination2 */
-
 /* Checkbox-radio */
-
 /* Popup */
-
 /* Quantity */
-
 /* Drag & Drop */
-
 /* Calendar */
-
 /* Spoiler */
-
 /* Select */
-
 /* Speed Line */
-
 /* Switch */
-
 /* Calculator */
-
 /* Timer */
-
 /* darkTheme */
-
 /* Tabs */
-
 /* Zoom */
-
 /* Rating */
-
 /* Rating + Score */
-
 /* Range */
-
 /* Header */
-
 .header {
   width: 100%;
 }
-
 .header__inner {
   position: relative;
 }
 
 /* Footer */
-
 /* All pages */
-
-.sendForm {
-  border: 1px solid black;
-  width: 500px;
-  background-color: rgb(157, 146, 146);
-  padding: 5px;
-}
-
-.sendForm legend {
-  font-weight: bold;
-  color: black;
-}
-
-.sendForm__box {
-  margin-top: 20px;
-}
-
-.sendForm__label {
-  font-style: italic;
-  color: black;
-}
-
-.sendForm__input {
-  width: 100%;
-  margin-top: 5px;
-  padding: 5px;
-}
-
-.sendForm__error {
-  color: rgb(197, 68, 68);
-  font-size: 13px;
-  margin-top: 4px;
-}
-
-.sendForm__input::-webkit-input-placeholder {
-  padding: 5px;
-}
-
-.sendForm__input::-moz-placeholder {
-  padding: 5px;
-}
-
-.sendForm__input:-ms-input-placeholder {
-  padding: 5px;
-}
-
-.sendForm__input::-ms-input-placeholder {
-  padding: 5px;
-}
-
-.sendForm__input::placeholder {
-  padding: 5px;
-}
-
-.sendForm__button {
-  border: 1px solid rgb(0, 0, 0);
-  padding: 5px;
-  margin-top: 10px;
-  color: black;
-}
