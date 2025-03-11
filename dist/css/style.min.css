@@ -95,6 +95,10 @@ h6 {
   margin: 0 auto;
 }
 
+.main {
+  background-color: skyblue;
+}
+
 .container {
   max-width: 1273px;
   margin: 0 auto;
@@ -149,6 +153,43 @@ h6 {
 /* Font Awesome */
 /* Ibg */
 /* Form */
+.sendForm {
+  border: 1px solid black;
+  width: 500px;
+  background-color: rgb(157, 146, 146);
+  padding: 5px;
+}
+.sendForm legend {
+  font-weight: bold;
+  color: black;
+}
+.sendForm__box {
+  margin-top: 20px;
+}
+.sendForm__label {
+  font-style: italic;
+  color: black;
+}
+.sendForm__input {
+  width: 100%;
+  margin-top: 5px;
+  padding: 5px;
+}
+.sendForm__error {
+  color: rgb(197, 68, 68);
+  font-size: 13px;
+  margin-top: 4px;
+}
+.sendForm__input::placeholder {
+  padding: 5px;
+}
+.sendForm__button {
+  border: 1px solid rgb(0, 0, 0);
+  padding: 5px;
+  margin-top: 10px;
+  color: black;
+}
+
 /* Tippy */
 /* Swiper */
 /* Light Gallery */
@@ -186,3 +227,8 @@ h6 {
 
 /* Footer */
 /* All pages */
+.wayforpayBtn {
+  border: 1px solid black;
+  padding: 6px;
+  color: black;
+}

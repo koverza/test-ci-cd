@@ -161,7 +161,7 @@ export function form() {
         if (noUser || noEmail || noPassword || noMessage) {
             console.log('❌ Ошибка валидации формы');
         } else if (!noUser && !noEmail && !noPassword && confirmedPassword && !noMessage) {
-            sendEmail({ username, email, message });
+            // sendEmail({ username, email, message });
             sendTelegram({ username, email, message });
             sendForm.reset();
         }
