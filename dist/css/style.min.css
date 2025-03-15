@@ -9433,6 +9433,9 @@ readers do not read off random characters that represent icons */
   width: fit-content;
   position: relative;
 }
+.pagination__select.active {
+  display: none;
+}
 .pagination__top {
   width: 100%;
   display: flex;
@@ -9446,7 +9449,7 @@ readers do not read off random characters that represent icons */
 .pagination__number {
   font-size: 16px;
 }
-.pagination__arrow {
+.pagination__selectArrow {
   width: 20px;
   height: 20px;
   display: flex;
@@ -9455,10 +9458,10 @@ readers do not read off random characters that represent icons */
   transition: all 250ms ease;
   margin-left: 15px;
 }
-.pagination__arrow.active {
+.pagination__selectArrow.active {
   transform: rotate(180deg);
 }
-.pagination__arrow::before {
+.pagination__selectArrow::before {
   content: "\f107";
   font-family: fontAwesome;
   color: rgb(68, 68, 68);
@@ -9466,7 +9469,7 @@ readers do not read off random characters that represent icons */
 }
 .pagination__menu {
   position: absolute;
-  top: 100%;
+  top: 30px;
   max-height: 150px;
   overflow-y: scroll;
   left: 0;
@@ -9493,6 +9496,21 @@ readers do not read off random characters that represent icons */
 }
 .pagination__button:hover {
   background-color: rgb(189, 189, 189);
+}
+.pagination__arrows {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+}
+.pagination__arrows.active {
+  display: none;
+}
+.pagination__arrows > button {
+  width: 50px;
+  height: 50px;
+  background-color: black;
 }
 .pagination__content {
   padding: 5px;

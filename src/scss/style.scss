@@ -38,6 +38,9 @@
         width: fit-content;
         position: relative;
     }
+    &__select.active {
+        display: none;
+    }
 
     &__top {
         width: 100%;
@@ -54,7 +57,7 @@
         font-size: 16px;
     }
 
-    &__arrow {
+    &__selectArrow {
         width: 20px;
         height: 20px;
         display: flex;
@@ -64,10 +67,10 @@
         margin-left: 15px;
     }
 
-    &__arrow.active {
+    &__selectArrow.active {
         transform: rotate(180deg);
     }
-    &__arrow::before {
+    &__selectArrow::before {
         content: '\f107';
         font-family: fontAwesome;
         color: rgb(68, 68, 68);
@@ -76,7 +79,7 @@
 
     &__menu {
         position: absolute;
-        top: 100%;
+        top: 30px;
         max-height: 150px;
         overflow-y: scroll;
         left: 0;
@@ -106,6 +109,29 @@
 
     &__button:hover {
         background-color: rgb(189, 189, 189);
+    }
+
+    &__arrows {
+        width: 300px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-top: 5px;
+    }
+
+    &__arrows.active {
+        display: none;
+    }
+
+    &__arrows > button {
+        width: 50px;
+        height: 50px;
+        background-color: black;
+    }
+
+    &__prev {
+    }
+    &__next {
     }
 
     &__content {
