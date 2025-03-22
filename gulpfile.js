@@ -15,17 +15,17 @@ global.app = {
 };
 
 // Импорт задач
-const { copy } = await import('./gulp/tasks/copy.js');
-const { reset } = await import('./gulp/tasks/reset.js');
-const { html } = await import('./gulp/tasks/html.js');
-const { server } = await import('./gulp/tasks/server.js');
-const { scss } = await import('./gulp/tasks/scss.js');
-const { js } = await import('./gulp/tasks/js.js');
-const { images } = await import('./gulp/tasks/images.js');
-const { otfToTtf, ttfToWoff, fontsStyle } = await import('./gulp/tasks/fonts.js');
-const { svgSpriteTask } = await import('./gulp/tasks/svg-sprite.js');
-const { zip } = await import('./gulp/tasks/zip.js');
-const { ftp } = await import('./gulp/tasks/ftp.js');
+import { copy } from './gulp/tasks/copy.js';
+import { reset } from './gulp/tasks/reset.js';
+import { html } from './gulp/tasks/html.js';
+import { server } from './gulp/tasks/server.js';
+import { scss } from './gulp/tasks/scss.js';
+import { js } from './gulp/tasks/js.js';
+import { images } from './gulp/tasks/images.js';
+import { otfToTtf, ttfToWoff, fontsStyle } from './gulp/tasks/fonts.js';
+import { svgSpriteTask } from './gulp/tasks/svg-sprite.js';
+import { zip } from './gulp/tasks/zip.js';
+import { ftp } from './gulp/tasks/ftp.js';
 
 // Наблюдатель за изменениями в файлах
 function watcher() {
@@ -48,8 +48,12 @@ const build = gulp.series(reset, mainTasks);
 const deployZIP = gulp.series(reset, mainTasks, zip);
 const deployFTP = gulp.series(reset, mainTasks, ftp);
 
+// Экспорт сценариев
+export { svgSpriteTask };
+export { dev };
+export { build };
+export { deployZIP };
+export { deployFTP };
+
 // Выполнение сценария по умолчанию
 gulp.task('default', dev);
-
-// Экспорт сценариев
-export { svgSpriteTask, dev, build, deployZIP, deployFTP };
