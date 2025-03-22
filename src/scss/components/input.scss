@@ -1,0 +1,15 @@
+.input {
+}
+.input::placeholder {
+}
+.input:hover {
+}
+.input:focus {
+}
+
+@media (any-hover: hover) {
+  .input {
+    &:hover {
+    }
+  }
+}

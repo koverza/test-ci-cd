@@ -1,0 +1,15 @@
+/* Стили для подсказок с темой "custom" */
+.tippy-box[data-theme~='custom'] {
+    background-color: #222;
+    color: #fff;
+    border: 2px solid #f00;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* Стили для стрелки подсказки */
+.tippy-box[data-theme~='custom'][data-placement^='top']>.tippy-arrow::before {
+    color: #222;
+}

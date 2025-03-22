@@ -1,0 +1,14 @@
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: #333;
+  padding: 10px;
+  border: 2px solid #000;
+}
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  color: #fff;
+  font-size: 24px;
+  position: relative;
+}

@@ -1,0 +1,9 @@
+.env
+help.txt
+snippets.txt
+node_modules/
+pa11y.html
+lighthouse-desktop.html
+lighthouse-mobile.html
+
+src/js

@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["netlify/functions/hello.js"],
+  "sourceRoot": "C:/Users/alexa/AppData/Local/Temp/tmp-16800-8srh3HaTEQ4t",
+  "sourcesContent": ["// hello.js (ES-\u043C\u043E\u0434\u0443\u043B\u044C)\nexport async function handler(event, context) {\n    const headers = {\n        'Access-Control-Allow-Origin': '*',\n        'Content-Type': 'application/json'\n    };\n\n    return {\n        statusCode: 200,\n        headers,\n        body: JSON.stringify({\n            message: '\u041F\u0440\u0438\u0432\u0435\u0442 \u043E\u0442 Netlify Functions!',\n            method: event.httpMethod,\n            query: event.queryStringParameters\n        })\n    };\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AACA,eAAsB,QAAQ,OAAO,SAAS;AAC1C,QAAM,UAAU;AAAA,IACZ,+BAA+B;AAAA,IAC/B,gBAAgB;AAAA,EACpB;AAEA,SAAO;AAAA,IACH,YAAY;AAAA,IACZ;AAAA,IACA,MAAM,KAAK,UAAU;AAAA,MACjB,SAAS;AAAA,MACT,QAAQ,MAAM;AAAA,MACd,OAAO,MAAM;AAAA,IACjB,CAAC;AAAA,EACL;AACJ;",
+  "names": []
+}

@@ -1,0 +1,66 @@
+// Checkbox-Radio
+.checkbox {
+  display: flex;
+  align-items: center;
+  &__input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  &__input::before {
+    content: "\f00c";
+    font-family: fontAwesome;
+    font-size: 14px;
+    color: white;
+    transition: all 250ms ease;
+    transform: scale(0);
+  }
+
+  &__label {
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  &__input:checked::before {
+    transform: scale(1);
+  }
+}
+.radio {
+  display: flex;
+  align-items: center;
+  &__input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
+  &__input::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    transition: all 250ms ease;
+    transform: scale(0);
+  }
+  &__input:checked::before {
+    transform: scale(1);
+  }
+
+  &__label {
+    margin-left: 5px;
+    cursor: pointer;
+  }
+}
