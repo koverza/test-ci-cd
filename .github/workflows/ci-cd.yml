@@ -30,7 +30,7 @@ jobs:
     #               SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
     build:
-        runs-on: ubuntu-lates
+        runs-on: ubuntu-latest
         needs: checkout
         steps:
             - name: Checkout кода # 🛠️ Добавляем шаг клонирования репозитория
