@@ -1,6 +1,5 @@
-/* eslint-disable no-undef */
-import { swipe, sendTelegram, sendEmail, i18n } from './$/index.js';
-// import { select } from './other/index.js';
+import { swipe } from './$/index.js'; // sendTelegram, sendEmail, i18n, swipe
+import { select } from './other/index.js';
 // darkTheme,
 // dragDrop,
 // useDynamicAdapt
@@ -34,7 +33,7 @@ import { swipe, sendTelegram, sendEmail, i18n } from './$/index.js';
 // form,
 // zoom,
 
-const data = [
+const array = [
     {
         userId: 1,
         id: 1,
@@ -177,13 +176,13 @@ const data = [
         userId: 3,
         id: 24,
         title: 'autem hic labore sunt dolores incidunt',
-        body: 'enim et ex nulla\nomnis voluptas quia qui\nvoluptatem consequatur numquam aliquam sunt\ntotam recusandae id dignissimos aut sed asperiores deserunt'
+        body: 'enim et ex nulla\nomnis voluptas quia qui\nволуптатем consequatur numquam aliquam sunt\ntotam recusandae id dignissimos aut sed asperiores deserunt'
     },
     {
         userId: 3,
         id: 25,
         title: 'rem alias distinctio quo quis',
-        body: 'ullam consequatur ut\nomnis quis sit vel consequuntur\nipsa eligendi ipsum molestiae et omnis error nostrum\nmolestiae illo tempore quia et distinctio'
+        body: 'ullam consequatur ut\nomnis quis sit vel consequuntur\nipsа eligendi ipsum molestiae et omnis error nostrum\nmolestiae illo tempore quia et distinctio'
     },
     {
         userId: 3,
@@ -195,50 +194,83 @@ const data = [
 
 const paginationObj = {
     url: 'https://jsonplaceholder.typicode.com/posts', // ''
-    mockArray: data,
+    mockArray: array.length > 0 ? array : [],
+    content: {
+        defaultItems: 11,
+        parentClass: '.pagination__content',
+        html: function (item) {
+            return `
+            <div class="pagination__info">
+                <span class="pagination__id">ID: ${item.id}</span>
+                <hr />
+                <span class="pagination__name">${item.title}</span>
+                <p class="pagination__text">${item.body}</p>
+            </div>`;
+        }
+    },
+
     select: {
-        showSelect: true,
-        class: '.pagination__select',
-        options: '.pagination__button' // <li data-item="10" class="pagination__button">10</li>
+        show: false,
+        parentClass: '.pagination__select',
+        options: '.pagination__button'
     },
     arrows: {
-        showArrows: true,
-        class: '.pagination__arrows',
+        show: false,
+        parentClass: '.pagination__arrows',
         prev: '.pagination__prev',
         next: '.pagination__next'
     },
-    content: {
-        class: '.pagination__content',
-        defaultItems: 11
-    },
     pages: {
-        showPages: false,
-        class: '.pagination__pages'
+        show: true,
+        parentClass: '.pagination__pages',
+        activeButtonClass: 'active', // ?
+        html: function (item) {
+            return `<li class="pagination__page">${item.id}</li>`;
+        }
     },
-    loading: ''
+    input: {
+        show: true,
+        parentClass: '',
+        html: function (item) {
+            return ``;
+        }
+    },
+    loading: {
+        show: true,
+        parentClass: '',
+        html: function (item) {
+            return ``;
+        }
+    }
 };
 
 function pagination(paginationObj) {
-    const pagination__select = document.querySelector(paginationObj.select.class);
+    // Select
+    const pagination__select = document.querySelector(paginationObj.select.parentClass);
     const pagination__buttons = document.querySelectorAll(paginationObj.select.options);
-    const pagination__content = document.querySelector(paginationObj.content.class);
-    const pagination__pages = document.querySelector(paginationObj.pages.showPages);
-    const pagination__arrows = document.querySelector(paginationObj.arrows.class);
+
+    // Content
+    const pagination__content = document.querySelector(paginationObj.content.parentClass);
+
+    // Arrows
+    const pagination__arrows = document.querySelector(paginationObj.arrows.parentClass);
     const pagePrev = document.querySelector(paginationObj.arrows.prev);
     const pageNext = document.querySelector(paginationObj.arrows.next);
 
-    let currentOffset = 0;
+    // Pages
+    const pagination__pages = document.querySelector(paginationObj.pages.parentClass);
 
+    let currentOffset = 0;
     let arrayFromServer = [];
     let defaultItemsArray = [];
     let defaultSelectNumber = paginationObj.content.defaultItems;
     let contentArray = [];
     let defaultPages = [];
+    let previousIndex = null;
+    let formula;
 
     // Здесь мы загружаем либо статические данные либо подключаемся к серверу
     async function getPosts(array) {
-        const formula = Math.ceil(arrayFromServer.length / defaultSelectNumber);
-
         if (paginationObj.url) {
             const response = await fetch(paginationObj.url);
             arrayFromServer = await response.json();
@@ -247,6 +279,7 @@ function pagination(paginationObj) {
         }
 
         contentArray = array && array.length ? array : arrayFromServer;
+        formula = Math.ceil(arrayFromServer.length / defaultSelectNumber);
 
         pagination__content.innerHTML = '';
 
@@ -264,34 +297,60 @@ function pagination(paginationObj) {
             paginationContent(contentArray);
         }
 
-        // for (let index = 0; index < formula; index++) {
-        //     const element = arrayFromServer[index];
-        //     if (element) {
-        //         defaultPages.push(element);
-        //     }
-        // }
+        for (let index = 0; index < formula; index++) {
+            const element = arrayFromServer[index];
+            if (element) {
+                defaultPages.push(element);
+            }
+        }
 
-        // paginationPages(defaultPages);
+        paginationPages(defaultPages);
+
+        document.querySelectorAll('.pagination__page').forEach((item, index) => {
+            let firstChild = document.querySelector('.pagination__page:first-child');
+
+            if (defaultSelectNumber !== 0) {
+                firstChild.classList.add('active');
+            }
+            item.addEventListener('click', () => {
+                // console.log('previous index', previousIndex);
+                // console.log('current index', index + 1);
+
+                if (firstChild.classList.contains('active')) {
+                    firstChild.classList.remove('active');
+                }
+
+                if (previousIndex !== null && previousIndex !== index + 1) {
+                    document
+                        .querySelector(`.pagination__page:nth-child(${previousIndex})`)
+                        .classList.remove('active');
+                    // if (
+                    //     previousIndex + paginationObj.content.defaultItems <
+                    //     arrayFromServer.length
+                    // ) {
+                    //     // let c = currentOffset + 1;
+                    //     // currentOffset = c * paginationObj.content.defaultItems;
+                    //     // // currentOffset =
+                    //     // //     currentOffset + (1 * paginationObj.content.defaultItems) / 100;
+                    //     // console.log(currentOffset);
+
+                    //     // updateBlock();
+                    // }
+
+                    let number = 0;
+
+                    if (previousIndex !== index + 1) {
+                        console.log(number + index + 1);
+                    } else if (index + 1 > previousIndex) {
+                        console.log(number + index - 1);
+                    }
+                }
+
+                item.classList.add('active');
+                previousIndex = index + 1;
+            });
+        });
     }
-
-    // pagination__pages.addEventListener('click', function (e) {
-    //     if (e.target && e.target.matches('a.pagination__page')) {
-    //         let number = Number(e.target.textContent);
-    //         // console.log(pageNumber);
-
-    //         const result = arrayFromServer.slice(paginationObj.content.defaultItems - 1, paginationObj.content.defaultItems + 9);
-    //         paginationObj.content.defaultItems += 10;
-
-    //         defaultItemsArray.length = 0;
-    //         defaultItemsArray.push(...result);
-
-    //         getPosts(defaultItemsArray);
-
-    //         if (number == 1) {
-    //             paginationObj.content.defaultItems = 11;
-    //         }
-    //     }
-    // });
 
     // кнопкa pagePrev
     pagePrev.addEventListener('click', () => {
@@ -330,28 +389,26 @@ function pagination(paginationObj) {
 
     // Отображаем количество страниц
     function paginationPages(array) {
-        array.forEach(page => {
-            let paginationPage = `
-                <li>
-                    <a href="#" class="pagination__page">${page.id}</a>
-                </li>`;
+        pagination__pages.innerHTML = '';
+        defaultPages = [];
 
-            pagination__pages.innerHTML += paginationPage;
+        array.forEach(item => {
+            let itemHtml =
+                typeof paginationObj.pages.html === 'function'
+                    ? paginationObj.pages.html(item)
+                    : paginationObj.pages.html;
+            pagination__pages.innerHTML += itemHtml;
         });
     }
 
-    // Отображаем контент пагинации
+    // Отображаем контент
     function paginationContent(array) {
-        array.forEach(elementInformation => {
-            let paginationContentInfo = `
-            <div class="pagination__info">
-                <span class="pagination__id">ID: ${elementInformation.id}</span>
-                <hr />
-                <span class="pagination__name">${elementInformation.title}</span>
-                <p class="pagination__text">${elementInformation.body}</p>
-            </div>`;
-
-            pagination__content.innerHTML += paginationContentInfo;
+        array.forEach(item => {
+            let itemHtml =
+                typeof paginationObj.content.html === 'function'
+                    ? paginationObj.content.html(item)
+                    : paginationObj.content.html;
+            pagination__content.innerHTML += itemHtml;
         });
     }
 
@@ -389,8 +446,8 @@ function pagination(paginationObj) {
         });
     }
 
-    pagination__select.classList.toggle('active', !paginationObj.select.showSelect);
-    pagination__arrows.classList.toggle('active', !paginationObj.arrows.showArrows);
+    pagination__select.classList.toggle('active', !paginationObj.select.show);
+    pagination__arrows.classList.toggle('active', !paginationObj.arrows.show);
 
     document.querySelector('.pagination__number').textContent =
         paginationObj.content.defaultItems - 1;

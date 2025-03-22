@@ -197,5 +197,11 @@
         align-items: center;
         justify-content: center;
         color: black;
+        cursor: pointer;
+    }
+
+    &__page.active {
+        background-color: red;
+        color: white;
     }
 }
