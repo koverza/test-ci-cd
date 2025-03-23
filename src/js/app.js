@@ -210,20 +210,20 @@ const paginationObj = {
     },
 
     select: {
-        show: false,
+        show: true,
         parentClass: '.pagination__select',
         options: '.pagination__button'
     },
     arrows: {
-        show: false,
+        show: true,
         parentClass: '.pagination__arrows',
         prev: '.pagination__prev',
         next: '.pagination__next'
     },
     pages: {
-        show: true,
         parentClass: '.pagination__pages',
-        activeButtonClass: 'active', // ?
+        childClass: '.pagination__page',
+        activeButtonClass: 'pagination__pageActive',
         html: function (item) {
             return `<li class="pagination__page">${item.id}</li>`;
         }
@@ -260,7 +260,7 @@ function pagination(paginationObj) {
     // Pages
     const pagination__pages = document.querySelector(paginationObj.pages.parentClass);
 
-    let currentOffset = 0;
+    let currentIndex = 0;
     let arrayFromServer = [];
     let defaultItemsArray = [];
     let defaultSelectNumber = paginationObj.content.defaultItems;
@@ -305,48 +305,42 @@ function pagination(paginationObj) {
         }
 
         paginationPages(defaultPages);
+        pageButtonsUpdateContent();
+    }
 
-        document.querySelectorAll('.pagination__page').forEach((item, index) => {
-            let firstChild = document.querySelector('.pagination__page:first-child');
+    // переключение по кнопкам страниц
+    function pageButtonsUpdateContent() {
+        document.querySelectorAll(paginationObj.pages.childClass).forEach((item, index) => {
+            let firstChild = document.querySelector(
+                `${paginationObj.pages.childClass}:first-child`
+            );
 
             if (defaultSelectNumber !== 0) {
-                firstChild.classList.add('active');
+                firstChild.classList.add(paginationObj.pages.activeButtonClass);
             }
-            item.addEventListener('click', () => {
-                // console.log('previous index', previousIndex);
-                // console.log('current index', index + 1);
 
-                if (firstChild.classList.contains('active')) {
-                    firstChild.classList.remove('active');
+            item.addEventListener('click', () => {
+                if (firstChild.classList.contains(paginationObj.pages.activeButtonClass)) {
+                    firstChild.classList.remove(paginationObj.pages.activeButtonClass);
                 }
 
                 if (previousIndex !== null && previousIndex !== index + 1) {
                     document
-                        .querySelector(`.pagination__page:nth-child(${previousIndex})`)
-                        .classList.remove('active');
-                    // if (
-                    //     previousIndex + paginationObj.content.defaultItems <
-                    //     arrayFromServer.length
-                    // ) {
-                    //     // let c = currentOffset + 1;
-                    //     // currentOffset = c * paginationObj.content.defaultItems;
-                    //     // // currentOffset =
-                    //     // //     currentOffset + (1 * paginationObj.content.defaultItems) / 100;
-                    //     // console.log(currentOffset);
-
-                    //     // updateBlock();
-                    // }
-
-                    let number = 0;
-
-                    if (previousIndex !== index + 1) {
-                        console.log(number + index + 1);
-                    } else if (index + 1 > previousIndex) {
-                        console.log(number + index - 1);
-                    }
+                        .querySelector(
+                            `${paginationObj.pages.childClass}:nth-child(${previousIndex})`
+                        )
+                        .classList.remove(paginationObj.pages.activeButtonClass);
                 }
 
-                item.classList.add('active');
+                if (previousIndex !== index + 1) {
+                    const start = index * (defaultSelectNumber - 1);
+                    const end = start + (defaultSelectNumber - 1);
+                    const result = arrayFromServer.slice(start, end);
+                    pagination__content.innerHTML = '';
+                    paginationContent(result);
+                }
+
+                item.classList.add(paginationObj.pages.activeButtonClass);
                 previousIndex = index + 1;
             });
         });
@@ -354,65 +348,49 @@ function pagination(paginationObj) {
 
     // кнопкa pagePrev
     pagePrev.addEventListener('click', () => {
-        if (currentOffset + paginationObj.content.defaultItems < arrayFromServer.length) {
-            currentOffset += paginationObj.content.defaultItems;
-            updateBlock();
+        if (currentIndex > 0) {
+            currentIndex = Math.max(0, currentIndex - paginationObj.content.defaultItems);
+            arrowsUpdateContent();
+
+            // Обновляем активную кнопку страницы
+            const activePageIndex = Math.floor(currentIndex / paginationObj.content.defaultItems);
+            updateActivePageButton(activePageIndex);
         }
     });
 
-    // кнопкa pagePrev
+    // кнопкa pageNext
     pageNext.addEventListener('click', () => {
-        if (currentOffset > 0) {
-            currentOffset = Math.max(0, currentOffset - paginationObj.content.defaultItems); // ======= Изменено: сброс в 0, если вычитание приводит к отрицательному значению =======
-            updateBlock();
+        if (currentIndex + paginationObj.content.defaultItems < arrayFromServer.length) {
+            currentIndex += paginationObj.content.defaultItems;
+            arrowsUpdateContent();
+
+            // Обновляем активную кнопку страницы
+            const activePageIndex = Math.floor(currentIndex / paginationObj.content.defaultItems);
+            updateActivePageButton(activePageIndex);
         }
     });
 
-    // кнопки селекта
-    pagination__buttons.forEach(pagination__button => {
-        pagination__button.addEventListener('click', () => {
-            if (+pagination__button.textContent != '' && arrayFromServer.length > 0) {
-                const newLimit = +pagination__button.textContent;
-                paginationObj.content.defaultItems = newLimit;
-                const selectArray = arrayFromServer.slice(currentOffset, currentOffset + newLimit);
-                getPosts(selectArray);
+    // Функция для обновления активной кнопки страницы
+    function updateActivePageButton(activePageIndex) {
+        document.querySelectorAll(paginationObj.pages.childClass).forEach((item, index) => {
+            if (index === activePageIndex) {
+                item.classList.add(paginationObj.pages.activeButtonClass);
+            } else {
+                item.classList.remove(paginationObj.pages.activeButtonClass);
             }
         });
-    });
+    }
 
-    function updateBlock() {
-        const start = currentOffset;
+    // обновление контента с помощью pagePrev и pageNext
+    function arrowsUpdateContent() {
+        const start = currentIndex;
         const end = start + paginationObj.content.defaultItems;
         const result = arrayFromServer.slice(start, end);
-        getPosts(result);
+        pagination__content.innerHTML = '';
+        paginationContent(result);
     }
 
-    // Отображаем количество страниц
-    function paginationPages(array) {
-        pagination__pages.innerHTML = '';
-        defaultPages = [];
-
-        array.forEach(item => {
-            let itemHtml =
-                typeof paginationObj.pages.html === 'function'
-                    ? paginationObj.pages.html(item)
-                    : paginationObj.pages.html;
-            pagination__pages.innerHTML += itemHtml;
-        });
-    }
-
-    // Отображаем контент
-    function paginationContent(array) {
-        array.forEach(item => {
-            let itemHtml =
-                typeof paginationObj.content.html === 'function'
-                    ? paginationObj.content.html(item)
-                    : paginationObj.content.html;
-            pagination__content.innerHTML += itemHtml;
-        });
-    }
-
-    // Делаем селект в пагинации
+    // создаем селект
     function paginationSelect(pagination__select) {
         const paginationSelectTop = document.querySelector('.pagination__top');
         const paginationSelectText = document.querySelector('.pagination__number');
@@ -443,6 +421,43 @@ function pagination(paginationObj) {
                 paginationSelectMenu.classList.remove('active');
                 paginationSelectArrow.classList.remove('active');
             }
+        });
+    }
+
+    // кнопки селекта
+    pagination__buttons.forEach(pagination__button => {
+        pagination__button.addEventListener('click', () => {
+            if (+pagination__button.textContent != '' && arrayFromServer.length > 0) {
+                const newLimit = +pagination__button.textContent;
+                paginationObj.content.defaultItems = newLimit;
+                const selectArray = arrayFromServer.slice(currentIndex, currentIndex + newLimit);
+                getPosts(selectArray);
+            }
+        });
+    });
+
+    // Отображаем количество страниц
+    function paginationPages(array) {
+        pagination__pages.innerHTML = '';
+        defaultPages = [];
+
+        array.forEach(item => {
+            let itemHtml =
+                typeof paginationObj.pages.html === 'function'
+                    ? paginationObj.pages.html(item)
+                    : paginationObj.pages.html;
+            pagination__pages.innerHTML += itemHtml;
+        });
+    }
+
+    // Отображаем контент
+    function paginationContent(array) {
+        array.forEach(item => {
+            let itemHtml =
+                typeof paginationObj.content.html === 'function'
+                    ? paginationObj.content.html(item)
+                    : paginationObj.content.html;
+            pagination__content.innerHTML += itemHtml;
         });
     }
 
