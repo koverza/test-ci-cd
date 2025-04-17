@@ -1,4 +1,3 @@
-// hello.js (ES-модуль)
 export async function handler(event, context) {
     const headers = {
         'Access-Control-Allow-Origin': '*',

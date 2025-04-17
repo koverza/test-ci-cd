@@ -4,30 +4,7 @@
     <body>
         <div class="wrapper max-width">
             @@include('html/header.html',{})
-            <main class="main">
-                <div class="pagination">
-                    <div class="pagination__select">
-                        <div class="pagination__top">
-                            <span class="pagination__number"></span>
-                            <span class="pagination__selectArrow"></span>
-                        </div>
-                        <ul class="pagination__menu">
-                            <li class="pagination__button">10</li>
-                            <li class="pagination__button">20</li>
-                            <li class="pagination__button">30</li>
-                        </ul>
-                    </div>
-
-                    <div class="pagination__arrows">
-                        <button class="pagination__prev">Prev</button>
-
-                        <button class="pagination__next">Next</button>
-                    </div>
-
-                    <div class="pagination__content"></div>
-                    <ul class="pagination__pages"></ul>
-                </div>
-            </main>
+            <main class="main"></main>
             @@include('html/footer.html',{})
         </div>
         @@include('html/script.html',{})

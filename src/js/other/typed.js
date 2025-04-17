@@ -2,16 +2,17 @@ import Typed from 'typed.js';
 
 export function typed() {
     console.log('typed works');
-
+    // <p class="text">Lorem ipsum dolor sit amet.</p>
+    
     // Base
-    // var typed = new Typed(".text", {
-    //     stringsElement: '.strings',
-    //     typeSpeed: 0,
-    //     backSpeed: 0,
-    //     backDelay: 500,
-    //     startDelay: 1000,
-    //     loop: false,
-    // });
+    var typed = new Typed(".text", {
+        stringsElement: '.strings',
+        typeSpeed: 0,
+        backSpeed: 0,
+        backDelay: 500,
+        startDelay: 1000,
+        loop: false,
+    });
 
     // Fade Out
     // var typed2 = new Typed('.text', {
