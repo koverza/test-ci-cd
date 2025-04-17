@@ -1,9 +1,6 @@
 /* Fonts */
 // @use "fonts" as fonts; ✅
 
-/* IcoMoon */
-// @use "icons";
-
 /* Font Awesome */
 // @use 'all.scss'; // without var transform and var animation-delay ✅
 
@@ -44,7 +41,7 @@
 // @use "checkbox-radio"; ✅
 
 /* Popup */
-// @use "popup";
+// @use "popup"; ✅
 
 /* Quantity */
 // @use "quantity"; ✅
@@ -80,7 +77,7 @@
 // @use "tabs"; ✅
 
 /* Zoom */
-// @use "zoom";
+// @use "zoom"; ✅
 
 /* Rating + Score */
 // @use "ratingScore"; ✅

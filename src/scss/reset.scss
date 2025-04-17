@@ -19,6 +19,7 @@ a:focus,
 a:active {
     // outline: none;
 }
+
 html,
 body {
     height: 100%;
@@ -89,4 +90,21 @@ h6 {
     max-width: $maxWidthContainer + px;
     margin: 0 auto;
     padding-inline: $containerPadding + px;
+}
+
+// for functions.js
+html.lock {
+    overflow: hidden;
+}
+
+html.touch body {
+    background: #ffe082;
+}
+
+html:not(.touch) body {
+    background: #e1f5fe;
+}
+
+html.touch .menu:hover {
+    pointer-events: none; // отключить hover-эффекты на мобилках
 }

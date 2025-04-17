@@ -28,7 +28,7 @@ export * from './parallax.js'; // ✅
 export * from './webp.js'; // ✅
 export * from './lazyLoading.js';
 export * from './popup.js';
-export * from './video.js';
+export * from './video.js'; // ✅
 export * from './zoom.js';
 // + regular-expression file
 // + functions file

@@ -1,5 +1,6 @@
 import {} from './$/index.js'; // sendTelegram ✅, sendEmail ✅, i18n ✅, swipe ✅, expensiveSwiper, pay
-import { parallax } from './other/index.js';
+import {} from './other/functions.js';
+import {} from './other/index.js';
 // useDynamicAdapt, ✅
 // anchors, ✅
 // animation, ✅
@@ -28,12 +29,11 @@ import { parallax } from './other/index.js';
 // typed, ✅
 // webp, ✅
 // parallax, ✅
-// popup,
+// video, ✅
+// zoom, ✅
+// popup, ✅
 // lazyLoading,
-// video,
-// zoom,
 
 window.addEventListener('load', () => {
     // webp()
-
 });
