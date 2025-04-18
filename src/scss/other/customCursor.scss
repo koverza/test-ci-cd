@@ -1,0 +1,43 @@
+// ========== Custom cursor ==========
+// <div class="page" data-custom-cursor>
+// <h1>Наведи курсор, кликни мышью</h1>
+// <button>Кнопка</button>
+// </div>
+
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transition: opacity 0.3s;
+}
+
+.cursor__pointer {
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s linear;
+}
+
+.cursor__shadow {
+    width: 25px;
+    height: 25px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
+}
+
+.cursor._hover .cursor__pointer {
+    transform: scale(2);
+}
+
+.cursor._active .cursor__pointer {
+    background: red;
+}

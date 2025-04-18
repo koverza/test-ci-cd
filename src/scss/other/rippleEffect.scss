@@ -1,0 +1,30 @@
+// ========== Ripple effect ==========
+// <button class="ripple-btn" data-ripple>Нажми меня</button>
+
+.ripple-btn {
+    position: relative;
+    overflow: hidden;
+    padding: 1rem 2rem;
+    background: #2979ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: rippleAnimation 600ms linear;
+    background-color: rgba(255, 255, 255, 0.6);
+    pointer-events: none;
+}
+
+@keyframes rippleAnimation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}

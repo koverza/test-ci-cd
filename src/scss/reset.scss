@@ -84,7 +84,6 @@ h6 {
     margin: 0 auto;
 }
 .main {
-    background-color: teal;
 }
 .container {
     max-width: $maxWidthContainer + px;
@@ -102,7 +101,7 @@ html.touch body {
 }
 
 html:not(.touch) body {
-    background: #e1f5fe;
+    background: transparent; // #e1f5fe
 }
 
 html.touch .menu:hover {

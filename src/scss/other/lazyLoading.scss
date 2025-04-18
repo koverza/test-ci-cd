@@ -1,9 +1,31 @@
-.page__image {
-  position: relative;
-  background: url("../img/loading.gif") center / 50px no-repeat;
+.lazy-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    height: auto;
+    margin-bottom: 50px;
 }
-
-.page__map {
-  position: relative;
-  background: url("../img/loading.gif") center / 50px no-repeat;
+.lazy-wrapper [class^='lds-'] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+.lazy-wrapper.loaded [class^='lds-'] {
+    opacity: 0;
+    pointer-events: none;
+}
+.lazy-wrapper .lazy {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    width: 100%;
+    display: block;
+}
+.lazy-wrapper.loaded .lazy {
+    opacity: 1;
 }

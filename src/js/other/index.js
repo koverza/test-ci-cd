@@ -15,6 +15,7 @@ export * from './toTop.js'; // ✅
 export * from './calculator.js'; // ✅
 export * from './quantity.js'; // ✅
 export * from './form.js'; // ✅
+export * from './trading.js'; // ✅
 export * from './gallery.js'; // ✅
 export * from './select.js'; // ✅
 export * from './speedLine.js'; // ✅
@@ -26,9 +27,9 @@ export * from './switch.js'; // ✅
 export * from './typed.js'; // ✅
 export * from './parallax.js'; // ✅
 export * from './webp.js'; // ✅
-export * from './lazyLoading.js';
-export * from './popup.js';
+export * from './lazyLoading.js'; // ✅
+export * from './popup.js'; // ✅
 export * from './video.js'; // ✅
-export * from './zoom.js';
+export * from './zoom.js'; // ✅
 // + regular-expression file
 // + functions file

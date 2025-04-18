@@ -5,7 +5,19 @@
 // @use 'all.scss'; // without var transform and var animation-delay ✅
 
 /* Ibg */
-// @use "ibg"; ✅
+@use 'ibg'; // ✅
+
+/* Loaders */
+@use 'loaders'; // ✅
+
+/* Lazy Loading */
+@use 'lazyLoading'; // ✅
+
+/* Ripple Effect */
+// @use "rippleEffect";  ✅
+
+/* Custom Cursor */
+// @use 'customCursor'; ✅
 
 /* Form */
 // @use "form"; ✅
@@ -24,9 +36,6 @@
 
 /* toTop */
 // @use "toTop"; ✅
-
-/* Loaders */
-// @use "loaders"; ✅
 
 /* Burger Menu */
 // @use "burger"; ✅

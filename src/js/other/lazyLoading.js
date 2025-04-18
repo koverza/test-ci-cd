@@ -1,56 +1,25 @@
+import LazyLoad from 'vanilla-lazyload';
+
 export function lazyLoading() {
     console.log('lazyLoading works');
 
-    const lazyImages = document.querySelectorAll('img[data-src],source[data-srcset]');
-    // const loadMapBlock = document.querySelector('._load-map');
-    const windowHeight = document.documentElement.clientHeight;
+    const lazyLoadInstance = new LazyLoad({
+        elements_selector: '.lazy',
 
-    let lazyImagesPositions = [];
-    if (lazyImages.length > 0) {
-        lazyImages.forEach(img => {
-            if (img.dataset.src || img.dataset.srcset) {
-                lazyImagesPositions.push(img.getBoundingClientRect().top + pageYOffset);
-                lazyScrollCheck();
-            }
-        });
-    }
+        callback_loading: el => {
+            const wrapper = el.closest('.lazy-wrapper');
+            if (wrapper) wrapper.classList.remove('loaded');
+        },
 
-    window.addEventListener('scroll', lazyScroll);
+        callback_loaded: el => {
+            const wrapper = el.closest('.lazy-wrapper');
+            if (wrapper) wrapper.classList.add('loaded');
+        },
 
-    function lazyScroll() {
-        if (document.querySelectorAll('img[data-src],source[data-srcset]').length > 0) {
-            lazyScrollCheck();
+        callback_error: el => {
+            const wrapper = el.closest('.lazy-wrapper');
+            if (wrapper) wrapper.classList.add('error');
+            el.src = 'fallback.gif';
         }
-        // if (!loadMapBlock.classList.contains('_loaded')) {
-        // 	getMap();
-        // }
-    }
-
-    function lazyScrollCheck() {
-        let imgIndex = lazyImagesPositions.findIndex(item => pageYOffset > item - windowHeight);
-        if (imgIndex >= 0) {
-            if (lazyImages[imgIndex].dataset.src) {
-                lazyImages[imgIndex].src = lazyImages[imgIndex].dataset.src;
-                lazyImages[imgIndex].removeAttribute('data-src');
-            } else if (lazyImages[imgIndex].dataset.srcset) {
-                lazyImages[imgIndex].srcset = lazyImages[imgIndex].dataset.srcset;
-                lazyImages[imgIndex].removeAttribute('data-srcset');
-            }
-            delete lazyImagesPositions[imgIndex];
-        }
-    }
-
-    // function getMap() {
-    // 	const loadMapBlockPos = loadMapBlock.getBoundingClientRect().top + pageYOffset;
-    // 	if (pageYOffset > loadMapBlockPos - windowHeight) {
-    // 		const loadMapUrl = loadMapBlock.dataset.map;
-    // 		if (loadMapUrl) {
-    // 			loadMapBlock.insertAdjacentHTML(
-    // 				"beforeend",
-    // 				`<iframe src="${loadMapUrl}" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`
-    // 			);
-    // 			loadMapBlock.classList.add('_loaded');
-    // 		}
-    // 	}
-    // }
+    });
 }

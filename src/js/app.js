@@ -1,6 +1,6 @@
 import {} from './$/index.js'; // sendTelegram ✅, sendEmail ✅, i18n ✅, swipe ✅, expensiveSwiper, pay
 import {} from './other/functions.js';
-import {} from './other/index.js';
+import { webp, lazyLoading, ibg } from './other/index.js';
 // useDynamicAdapt, ✅
 // anchors, ✅
 // animation, ✅
@@ -32,8 +32,11 @@ import {} from './other/index.js';
 // video, ✅
 // zoom, ✅
 // popup, ✅
-// lazyLoading,
+// lazyLoading, ✅
+// trading, ✅
 
 window.addEventListener('load', () => {
     // webp()
+    // lazyLoading()
+    // ibg()
 });
